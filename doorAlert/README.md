@@ -1,1 +1,1 @@
-# nvpApps
+This application will be the first thing a guest will see when they walk in. They will input their name and select the company/name of the person they are meeting with and it will send a text message or email to that person notifying them that someone is at the front desk waiting for them
