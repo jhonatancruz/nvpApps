@@ -31,6 +31,15 @@
   float: right;
   margin: 0;
 }
+#header a{
+  text-decoration: none;
+  color: white;
+}
+#allbuttons form{
+  text-align: center;
+  display: inline-block;
+}
+
 </style>
 </head>
 <body>
@@ -39,19 +48,28 @@
     <!-- <div class="collapse navbar-collapse"> -->
       <!-- <img src="/static/nvpImage.png" alt="Nvp logo" height="50" width="50"> -->
       <img src="/static/nvpImage.png" alt="Nvp logo" height="50" width="50">
-      <h1 href="index.html">Social</h1>
+      <h1><a href="/" style="text-decoration: none">Social</a></h1>
 </div>
 </div>
-                <div class="container">
-                  <form class="form-group col-lg-14" action="SignUp.html" method="POST">
-                      <div class="row">
-                          <div class= "form-group col-lg-14">
-                        <br>
-                        <br>
-                        <center><button class="btn btn-lg btn-primary" type="submit">Sign Up</button></center>
-                      </div>
-                    </div>
+<div class="container">
+<center><h1>Newark Venture Partner Social</h1></center>
+<center><h4>This application is solely for members in the NVP Space.</h4></center>
+</div>
+<br>
+<br>
+<div id="allbuttons">
+                  <center><form class="form-group col-lg-14" action="SignUp.html" method="POST">
+                      <div id="buttons">
+                        <center><button class="btn btn-lg btn-primary" type="submit">Sign Up</button>
+                      </div >
                 </form>
+                <form class="form-group col-lg-14" action="dashboard.html" method="POST">
+                    <div id="buttons">
+                      <center><button class="btn btn-lg btn-danger" type="submit">Log In</button>
+                    </div>
+
+              </form></center>
+            </div>
             </div>
         </div>
       </div>
