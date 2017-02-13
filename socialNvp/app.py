@@ -34,6 +34,10 @@ def homepage():
 def index():
     return render_template('SignUp.html')
 
+@app.route('/dashboard.html', methods=['POST'])
+def dashboard():
+    return render_template('dashboard.html')
+
 # Save e-mail to database and send to success page
 @app.route('/prereg', methods=['POST'])
 def prereg():
