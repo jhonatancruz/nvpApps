@@ -22,8 +22,8 @@ class Members(db.Model):
         self.phoneNumber= phoneNumber
         self.email= email
 
-    def __repr__(self, email):
-        return '< Email %s>' % (self.email)
+    # def __repr__(self, email):
+    #     return '< Email %s>' % (self.email)
 
 # Set "homepage" to index.html
 @app.route('/')
@@ -36,11 +36,12 @@ def index():
 
 @app.route('/dashboard.html', methods=['POST'])
 def dashboard():
-    return render_template('dashboard.html')
+    members= Members.query.all()
+    return render_template('dashboard.html', members=members)
 
 # Save e-mail to database and send to success page
-@app.route('/prereg', methods=['POST'])
-def prereg():
+@app.route('/registering', methods=['POST'])
+def registering():
     if request.method == 'POST':
         email = request.form['email']
         firstName= request.form['firstName']
@@ -50,12 +51,13 @@ def prereg():
         phoneNumber= request.form['phoneNumber']
 
         # Check that email does not already exist (not a great query, but works)
-        if not db.session.query(Members).filter(Members.firstName+Members.lastName== firstName+lastName).count():
-        #em = Users(email)
+        if not db.session.query(Members).filter(Members.phoneNumber == phoneNumber).count():
             user= Members(firstName, lastName, company, phoneNumber, email)
             db.session.add(user)
             db.session.commit()
             return render_template('success.html')
+        else:
+            return render_template('error.html')
     return render_template('index.html')
 
 if __name__ == '__main__':
