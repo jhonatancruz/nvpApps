@@ -53,9 +53,9 @@
   </div>
 <br>
 <br>
-  <div id="search">
-    <center><form class="form-group col-lg-14" action= method="POST">
-      <div class="btn-group">
+  <!-- <div id="search"> -->
+    <!-- <center><form class="form-group col-lg-14" action= method="POST"> -->
+      <!-- <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Members<span class="caret"></span>
         </button>
@@ -66,10 +66,84 @@
           <li role="separator" class="divider"></li>
           <li><a href="#">Separated link</a></li>
         </ul>
-      </div>
-      <button class="btn btn-lg btn-success" type="submit">Search</button>
-    </form></center>
+      </div> -->
+      <center><button class="btn btn-lg btn-success" id="info" >Search All</button></center>
+    <!-- </form></center> -->
+    <br>
+  <!-- </div> -->
+  <div class="container" id="mydiv">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Company</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in members %}
+        <tr>
+          <td>{{x.firstName}}</td>
+          <td>{{x.lastName}}</td>
+          <td>{{x.company}}</td>
+          <td>{{x.phoneNumber}}</td>
+          <td>{{x.email}}</td>
+        </tr>
+        {% endfor %}
+        <!-- <tr class="success">
+          <td>Success</td>
+          <td>Doe</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr class="danger">
+          <td>Danger</td>
+          <td>Moe</td>
+          <td>mary@example.com</td>
+        </tr>
+        <tr class="info">
+          <td>Info</td>
+          <td>Dooley</td>
+          <td>july@example.com</td>
+        </tr>
+        <tr class="warning">
+          <td>Warning</td>
+          <td>Refs</td>
+          <td>bo@example.com</td>
+        </tr>
+        <tr class="active">
+          <td>Active</td>
+          <td>Activeson</td>
+          <td>act@example.com</td>
+        </tr> -->
+      </tbody>
+    </table>
   </div>
+<script>
+var button = document.getElementById("info");
+var myDiv = document.getElementById("mydiv");
+
+function show() {
+    myDiv.style.visibility = "visible";
+}
+
+function hide() {
+    myDiv.style.visibility = "hidden";
+}
+
+function toggle() {
+    if (myDiv.style.visibility === "hidden") {
+        show();
+    } else {
+        hide();
+    }
+}
+
+hide();
+
+button.addEventListener("click", toggle, false);
+</script>
 </body>
 
 </html>
