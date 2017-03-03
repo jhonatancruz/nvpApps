@@ -98,13 +98,11 @@ class Members(UserMixin, db.Model):
 
 
             # Check that email does not already exist (not a great query, but works)
-            if not db.session.query(Members()).filter(Members().phoneNumber == phoneNumber).count():
-                user= Members(firstName, lastName, company, phoneNumber, email, password, is_active, has_slack, has_kisi, has_agreement, has_mailbox, lockerNum)
-                db.session.add(user)
-                db.session.commit()
-                return render_template('success.html')
-            else:
-                return render_template('error.html')
+            # if not db.session.query(Members.filter(Members.phoneNumber == phoneNumber).count():
+            user= Members(firstName, lastName, company, phoneNumber, email, password, is_active, has_slack, has_kisi, has_agreement, has_mailbox, lockerNum)
+            db.session.add(user)
+            db.session.commit()
+            return render_template('success.html')
         return render_template('index.html')
 
     #routes to the login page
