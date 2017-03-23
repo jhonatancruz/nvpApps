@@ -1,1 +1,3 @@
 This application will be the first thing a guest will see when they walk in. They will input their name and select the company/name of the person they are meeting with and it will send a text message or email to that person notifying them that someone is at the front desk waiting for them
+
+This app will use google forms to retrieve those responses from the guest. Then, with a python library called gspread the program will go inside the form responses, grab the email of the person they are meeting and with that find their phone number. After all that, it will send that person a text message saying that their guest is that the front desk with and API called Twilio
