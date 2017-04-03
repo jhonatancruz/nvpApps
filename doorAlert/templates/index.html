@@ -1,32 +1,138 @@
 <!DOCTYPE html>
 <html>
-<script src="http://www.w3schools.com/lib/w3data.js"></script>
 <head>
 <title>DoorAlert</title>
-<link rel="stylesheet" type="text/css" href="static/styleNews.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+#nvpImg{
+  padding-top: 5%;
+  float:left;
+}
+#twilioImg{
+  /*float:right;*/
+}
+#header a{
+}
+.phone-number .col-xs-3::after{
+ content: "-";
+ position:absolute;
+    right: 5px;
+    color: black;
+    border: 0px solid;
+    top: 5px;
+}
 
+.phone-number .col-xs-4{
+	width:25%;
+}
+
+.phone-number .col-xs-3, .phone-number .col-xs-4{
+
+	padding-left:3;
+}
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.col-fixed {
+    /* custom width */
+    width:100px;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+<script>
+function hideLoader(){
+  document.getElementsById('loader').style.display = "none";
+}
+
+</script>
 </head>
 <body>
-<div class="container">
-<form method="POST" action="/" class="form-signin">
-        <h2 class="form-signin-heading"><center>DoorAlert</center></h2>
-        <label for="inputEmail" class="sr-only">Name</label>
-        <input type="name" name="name" class="form-control" placeholder="Name" required="" autofocus="">
-        <label for="inputEmail" class="sr-only">Person</label>
-        <input type="name" name="proName" class="form-control" placeholder="Person Meeting">
-        <h2></h2>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Next</button>
-      </form>
+<center><div class="container">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header" id="header">
+          <img src="static/nvpImage1.png" height="40" width="35" id="nvpImg" style="margin-right: 10px">
+          <a class="navbar-brand" href="/">DoorAlert</a>
+        </div>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse " >
+        <ul class="nav navbar-nav" id="buttons">
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+    <h2 class="form-signin-heading"><center>Verify Your Phone Number with Twilio<img src="static/twilio.png" height="40" width="35" id="twilioImg"></center></h2>
+      <p>In order for you to receive text message alerts from the NVP team or the front desk you must verify your number here!</p>
+      <br>
+      <br>
+      <div class="container">
+        <div class="row row-centered" onload="hideLoader()">
+                <!-- <div class="form-group phone-number"> -->
+                <!-- <div id="loader" class="loader"></div> -->
+                  <form id="form" action="/verify" method="POST">
+                    <label>Phone Number:</label>
+                      <div class="col-xs-1 col-centered">
+                        <input type="tel" name="phone1" class="form-control" value="" size="3" maxlength="3" required="required" title="">
+                      </div>
+
+                      <div class="col-xs-1 col-centered">
+                        <input type="tel" name="phone2" class="form-control" value="" size="3" maxlength="3" required="required" title="">
+                      </div>
+                      <div class="col-xs-1 col-centered">
+                        <input type="tel" name="phone3" class="form-control" value="" size="4" maxlength="4" required="required" title="">
+                      </div>
+
+                      <button type="submit"  class="btn btn-success btn-md">Call me!</button>
+                    </form>
+                <!-- </div> -->
+              </div>
+      </div>
+    </div>
+
 </div>
 
-<!-- <div w3-include-html="loading.html"></div> -->
 
 </body>
-<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-<h1></h1>
-<tail><center>Created by Jhonatan Cruz for NVP</center></tail>
+
 </html>

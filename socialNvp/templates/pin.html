@@ -52,19 +52,12 @@ Sign Up
 </nav>
 <div class="container" id="signupForm">
 
-  <form class="form-signin" enctype=multipart/form-data method="POST" action="/signup">
-    <center><h2 class="form-signin-heading">Sign Up</h2></center>
-    {{ form.hidden_tag()}}
-    <span class="inline">
-    {{ wtf.form_field(form.firstName)}}
-    {{ wtf.form_field(form.lastName)}}
-  </span>
-    {{ wtf.form_field(form.email)}}
-    {{ wtf.form_field(form.company)}}
-    {{ wtf.form_field(form.phoneNumber)}}
-    {{ wtf.form_field(form.password) }}
-    <input type=file name=photo>
-    <button class="btn btn-lg btn-danger btn-block" type="submit">Sign Up</button>
+  <form class="form-signin" enctype=multipart/form-data method="POST" action="/pinAccess">
+  <div class="form-group">
+    <center><h2 class="form-signin-heading">Pin</h2></center>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Pin">
+    <button class="btn btn-lg btn-danger btn-block" type="submit">Submit</button>
+  </div>
   </form>
 
 </div> <!-- /container -->

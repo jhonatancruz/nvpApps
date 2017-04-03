@@ -7,8 +7,42 @@ NVP Social
 {% block styles %}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
-{% endblock %}
+<style>
+#buttons {
+  padding-top: 1%;
+  float: right;
 
+}
+form{
+  float: left;
+}
+#nvpImg{
+  padding-top: 5%;
+  float:left;
+}
+#background{
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+#frontText{
+  align-items: center;
+}
+.starter-template h2 {
+   position: absolute;
+   top: 300px;
+   left: 0;
+   width: 100%;
+}
+.starter-template h2 span {
+   color: white;
+   font: bold 24px/45px Helvetica, Sans-Serif;
+   letter-spacing: -1px;
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+}
+</style>
+{% endblock %}
 {% block content %}
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -19,24 +53,31 @@ NVP Social
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">NVP Social</a>
+          <div class="navbar-header" id="header">
+            <img src="static/nvpImage.png" height="40" width="35" id="nvpImg" style="margin-right: 10px">
+            <a class="navbar-brand" href="/">NVP Social</a>
+          </div>
         </div>
         <div id="navbar" class="collapse navbar-collapse " >
-          <ul class="nav navbar-nav">
-            <!-- <li class="active"><a href="#">Home</a></li>> -->
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          <ul class="nav navbar-nav" id="buttons">
+            <div>
+            <form action="{{ url_for('login') }}">
+            <li><button type="submit"  class="btn btn-primary btn-md" style="margin-right: 10px">Login</button></li>
+            </form>
+            <form action="{{ url_for('signup') }}">
+            <li><button type="submit"  class="btn btn-danger btn-md">Sign Up</button></li>
+            </form>
+          </div>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <div class="container">
-
+<body background="static/nvpAll.jpeg" id="background">
+    <div class="container" >
       <div class="starter-template">
-        <h1>Newark Venture Partners Social</h1>
-        <p class="lead">This application is solely for members in the NVP Space. </p>
+          <h2><span>Newark Venture Partners Social:</span><br><span>This application is solely for members in the NVP Space.</span></h2>
+          <!-- <p class="lead" id="frontText">This application is solely for members in the NVP Space. </p> -->
       </div>
-
-    </div><!-- /.container -->
+    </div>
+</body>
 {% endblock %}

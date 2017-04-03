@@ -6,8 +6,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+<style>
+#T1{
+  margin: auto;
+  width: 11%;
+  float: left;
+  margin-right: 5%;
+}
+#nvpImg{
+  padding-top: 5%;
+  float:left;
+}
+</style>
 <body>
-  <h1>Success!</h1>
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-header" id="header">
+            <img src="static/nvpImage1.png" height="40" width="35" id="nvpImg" style="margin-right: 10px">
+            <a class="navbar-brand" href="/">DoorAlert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  <center><h2>Great! You should be expecting a call soon.</h2></center>
+  <center><p>Your code is </p></center>
+  <br>
+  <div style="width:45%; margin:0 auto;">
+  <div class="thumbnails">
+  <!-- <div class="col-sm-6 col-md-1"> -->
+  <div id="T1"class="thumbnail">
+    <center><h2>{{firstValue}}</h2></center>
+  </div>
+  <!-- </div> -->
+  <!-- <div class="col-sm-6 col-md-1"> -->
+  <div id="T1"class="thumbnail">
+    <center><h2>{{secValue}}</h2></center>
+  </div>
+  <!-- </div> -->
+
+  <!-- <div class="col-sm-6 col-md-1"> -->
+  <div id="T1" class="thumbnail">
+    <center><h2>{{thirdValue}}</h2></center>
+  </div>
+  <!-- </div> -->
+  <!-- <div class="col-sm-6 col-md-1"> -->
+  <div id="T1" class="thumbnail">
+    <center><h2>{{fourValue}}</h2></center>
+  </div>
+
+  <!-- <div class="col-sm-6 col-md-1"> -->
+  <div id="T1" class="thumbnail">
+    <center><h2>{{fiveValue}}</h2></center>
+  </div>
+  <!-- </div> -->
+  <!-- <div class="col-sm-6 col-md-1"> -->
+  <div id="T1" class="thumbnail">
+    <center><h2>{{sixValue}}</h2></center>
+  </div>
+  </div>
+  </div>
   </div>
 </body>
 </html>
